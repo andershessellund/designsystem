@@ -26,7 +26,7 @@
     "nx": "nx",
     "start": "npm-run-all --parallel \"ng serve\" \"build:core:watch\"",
     "start:storybook": "npm run compodoc:designsystem && npm run bundle-storybook-assets && ng run designsystem:storybook",
-    "bundle-storybook-assets": "mkdir -p libs/designsystem/.storybook/static/assets/kirby/icons/svg && cp libs/designsystem/src/lib/icons/svg/** libs/designsystem/.storybook/static/assets/kirby/icons/svg ",
+    "bundle-storybook-assets": "mkdir -p libs/designsystem/.storybook/.static/assets/kirby/icons/svg && cp libs/designsystem/src/lib/icons/svg/** libs/designsystem/.storybook/.static/assets/kirby/icons/svg ",
     "compodoc:designsystem": "compodoc -p ./libs/designsystem/tsconfig.lib.json -e json -d .",
     "build": "ng build",
     "build-polyfills": "webpack --config webpack.polyfills.config.js",
