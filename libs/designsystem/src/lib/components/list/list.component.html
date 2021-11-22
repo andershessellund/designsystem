@@ -102,6 +102,6 @@
   </div>
 </ng-template>
 
-<ion-list *ngIf="!items?.length">
+<ion-list *ngIf="!items?.length" [class.has-divider]="showDivider">
   <ng-content></ng-content>
 </ion-list>

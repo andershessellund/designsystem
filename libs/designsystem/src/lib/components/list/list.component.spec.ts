@@ -336,4 +336,24 @@ describe('ListComponent with items declared in markup', () => {
 
     expect(items).toHaveLength(4);
   });
+
+  describe('divider', () => {
+    it('should set class "has-divider" on list element when showDivider is true', () => {
+      spectator.setInput({
+        showDivider: true,
+      });
+
+      const list = spectator.query('ion-list');
+      expect(list.classList).toContain('has-divider');
+    });
+
+    it('should not set class "has-divider" on list element when showDivider is false', () => {
+      spectator.setInput({
+        showDivider: false,
+      });
+
+      const list = spectator.query('ion-list');
+      expect(list.classList).not.toContain('has-divider');
+    });
+  });
 });
