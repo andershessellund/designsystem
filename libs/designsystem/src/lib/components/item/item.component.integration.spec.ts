@@ -45,7 +45,7 @@ describe('ItemComponent', () => {
     ],
   });
 
-  describe('inside kirby-list', () => {
+  describe('inside kirby-list with array of items', () => {
     beforeEach(async () => {
       spectator = createHost<ListComponent>(
         `
@@ -115,6 +115,29 @@ describe('ItemComponent', () => {
     });
   });
 
+  describe('declared in markup inside kirby-list', () => {
+    describe('with dividers', () => {
+      beforeEach(async () => {
+        spectator = createHost<ListComponent>(
+          `
+            <kirby-list [showDivider]="true">
+              <kirby-item>Test Item</kirby-item>
+              <kirby-item>Test Item</kirby-item>
+              <kirby-item>Test Item</kirby-item>
+            </kirby-list>
+            `
+        );
+        ionList = spectator.queryHost('ion-list');
+        await TestHelper.whenReady(ionList);
+        itemsInList = spectator.queryAll('ion-list ion-item');
+      });
+
+      fit('should render divider for items', () => {
+        console.dir(itemsInList);
+      });
+    });
+  });
+
   describe('inside kirby-list with cards', () => {
     beforeEach(async () => {
       spectator = createHost<ListComponent>(
@@ -128,7 +151,7 @@ describe('ItemComponent', () => {
       );
       ionList = spectator.queryHost('ion-list');
       await TestHelper.whenReady(ionList);
-      itemsInList = spectator.queryAll('ion-list ion-item');
+      itemsInList = spectator.queryAll('ion-list kirby-item');
     });
 
     it('should create list wrapper', () => {
