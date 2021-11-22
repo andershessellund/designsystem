@@ -82,6 +82,12 @@
   --min-height: #{$dropdown-item-height};
 }
 
+:host-context(kirby-list .has-divider) ion-item {
+  &:not(.last) {
+    border-bottom: 1px solid get-color('background-color');
+  }
+}
+
 /* clean-css ignore:start */
 // Fixes https://github.com/kirbydesign/designsystem/issues/1745
 ion-item {
