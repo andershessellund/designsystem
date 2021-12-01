@@ -28,9 +28,6 @@ runs:
     - name: Remove hash-files
       run: rm hash-file1.json && rm hash-file2.json
       shell: bash
-    - name: Last steps
-      run: echo ------------- POST -----------------
-      shell: bash
     - name: Clean Install NPM Dependencies
       if: steps.cache.outputs.cache-hit != 'true'
       run: npm ci
