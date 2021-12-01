@@ -15,13 +15,19 @@ runs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{env.NODE_VERSION}}
+    - name: Prepare hash-files
+      run: jq 'del(.version)' package.json > hash-file1.json && jq 'del(.version)' package-lock.json > hash-file2.json
+      shell: bash
     - name: Fetch Node Modules Cache
       uses: actions/cache@v2
       id: cache
       with:
         path: | 
           **/node_modules
-        key: node-modules-${{ runner.os }}-${{ inputs.node-version }}-${{hashFiles('**/package.json')}}-${{hashFiles('**/package-lock.json')}}
+        key: node-modules-${{ runner.os }}-${{ inputs.node-version }}-${{hashFiles('**/hash-file1.json')}}-${{hashFiles('**/hash-file2.json')}}
+    - name: Remove hash-files
+      run: rm hash-file1.json && rm hash-file2.json
+      shell: bash
     - name: Last steps
       run: echo ------------- POST -----------------
       shell: bash
