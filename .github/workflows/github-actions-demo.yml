@@ -10,7 +10,7 @@ jobs:
       - name: Say Hello
         uses: ./.github/actions/say-hello
         with:
-          name: Mads
+          name: Mads1
 
   kirby-setup-test:
     name: Kirby setup test
