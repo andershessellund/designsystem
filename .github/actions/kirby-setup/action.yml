@@ -5,6 +5,9 @@ inputs:
       description: 'Node version to be used for setup'
       required: false 
       default: '14.16'
+defaults:
+  run:
+    shell: bash
 runs: 
   using: "composite"
   steps: 
