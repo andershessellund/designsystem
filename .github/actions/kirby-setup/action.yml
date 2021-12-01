@@ -26,6 +26,8 @@ runs:
       - name: Clean Install NPM Dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
+        shell: bash 
       - name: Run Postinstall Script
         if: steps.cache.outputs.cache-hit == 'true'
         run: npm run postinstall
+        shell: bash 
