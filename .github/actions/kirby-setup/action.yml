@@ -8,7 +8,7 @@ inputs:
 runs: 
   using: "composite"
   steps:
-    - name: Checkout repo
+    - name: Checkout repo 
       uses: actions/checkout@v2
       with:
         token: ${{secrets.VERSION_BUMP_GITHUB_TOKEN}}
