@@ -19,6 +19,9 @@ runs:
         path: | 
           **/node_modules
         key: node-modules-${{ runner.os }}-${{ inputs.node-version }}-${{hashFiles('**/package.json')}}-${{hashFiles('**/package-lock.json')}}
+    - name: Last steps
+      run: echo ------------- POST -----------------
+      shell: bash
     - name: Clean Install NPM Dependencies
       if: steps.cache.outputs.cache-hit != 'true'
       run: npm ci
