@@ -1,10 +1,5 @@
 name: 'Setup Kirby environment'
 description: 'Will checkout the repository, install node, install npm dependencies either from a cache or as a clean install'
-inputs: 
-  node-version: # Composite steps does not support env - added node version as input instead for DRYness
-      description: 'Node version to be used for setup'
-      required: false 
-      default: '14.16'
 runs: 
   using: "composite"
   steps:
