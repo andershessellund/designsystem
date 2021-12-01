@@ -3,12 +3,10 @@ description: 'Will checkout the repository, install node, install npm dependenci
 runs:
   using: 'composite'
   steps:
-    - name: Checkout repo
-      run: echo HELLO
-#    - name: Install Node.js
-#      uses: actions/setup-node@v2
-#      with:
-#        node-version: ${{ inputs.node-version }}
+    - name: Install Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ inputs.node-version }}
 #    - name: Fetch Node Modules Cache
 #      uses: actions/cache@v2
 #      id: cache
