@@ -1,18 +1,18 @@
 name: GitHub Actions Demo
 on: [push]
 jobs:
-  say-hello-test:
-    name: Say hello test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
-        with:
-          token: ${{secrets.VERSION_BUMP_GITHUB_TOKEN}}
-      - name: Say Hello
-        uses: ./.github/actions/say-hello
-        with:
-          name: Mads1
+#  say-hello-test:
+#    name: Say hello test
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout repo
+#        uses: actions/checkout@v2
+#        with:
+#          token: ${{secrets.VERSION_BUMP_GITHUB_TOKEN}}
+#      - name: Say Hello
+#        uses: ./.github/actions/say-hello
+#        with:
+#          name: Test
 
   kirby-setup-test:
     name: Kirby setup test
