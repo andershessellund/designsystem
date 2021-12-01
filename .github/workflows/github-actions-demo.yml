@@ -26,7 +26,7 @@ jobs:
         with:
           token: ${{secrets.VERSION_BUMP_GITHUB_TOKEN}}
       - name: Kirby setup
-        uses: ./.github/actions/kirby-setup
+        uses: kirbydesign/designsystem/.github/actions/kirby-setup@v1
 
 
   Explore-GitHub-Actions:
