@@ -8,6 +8,10 @@ inputs:
 runs: 
   using: "composite"
   steps:
+    - name: Checkout repo
+      uses: actions/checkout@v2
+      with:
+        token: ${{secrets.VERSION_BUMP_GITHUB_TOKEN}}
     - name: Get Node.JS version from package.json
       run: echo "NODE_VERSION=$(jq -r .engines.node ./package.json)" >> $GITHUB_ENV
       shell: bash
