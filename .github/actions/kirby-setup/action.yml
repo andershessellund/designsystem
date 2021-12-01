@@ -10,6 +10,9 @@ runs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{env.NODE_VERSION}}
+      - name: Echo Node.JS version from package.json
+        run: echo ${{env.NODE_VERSION}}
+        shell: bash
 #    - name: Fetch Node Modules Cache
 #      uses: actions/cache@v2
 #      id: cache
