@@ -18,6 +18,9 @@ jobs:
     name: Kirby setup test
     runs-on: ubuntu-latest
     steps:
+      - name: Action path
+        run: echo ${{github.action_path}}
+        shell: bash
       - name: Checkout repo
         uses: actions/checkout@v2
         with:
