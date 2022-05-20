@@ -71,8 +71,8 @@ ion-toolbar {
     opacity: 0;
     transform: translateY(10px);
     transition-property: opacity, transform;
-    transition-duration: utils.get-transition-duration('quick');
-    transition-timing-function: utils.get-transition-easing('static');
+    transition-duration: 150ms;
+    transition-timing-function: utils.get-transition-easing('enter-exit');
 
     &.slide-and-fade-in {
       opacity: 1;
